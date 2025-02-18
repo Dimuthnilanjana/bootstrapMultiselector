@@ -1,0 +1,274 @@
+@import '../css/eui.css';
+
+
+/* Mega Menu Styling */
+.mega-menu {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  background: var(--base-0);
+  border: 1px solid var(--gray-200);
+  display: none;
+  z-index: 1000;
+  /* max-height: 600px; */
+}
+
+.menu-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background-color: var(--gray-100);
+}
+
+.menu-content {
+  padding: 24px;
+  max-height: 60vh;
+}
+
+/* Ensuring department list is always visible */
+.department-list {
+  display: block !important;
+  overflow-y: auto;
+}
+
+/* Make sure other lists are hidden initially */
+.category-list,
+.subcategory-list,
+.item-list,
+.bookmarkcategory-list {
+  display: none;
+}
+
+/* Show selected elements */
+.show {
+  display: block;
+}
+
+/* Styling for menu items */
+.department-item,
+.category-item,
+.subcategory-item,
+.item ,
+.bookmark-item{
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.department-item:hover,
+.category-item:hover,
+.subcategory-item:hover,
+.item:hover,
+.bookmark-item:hover {
+  background-color:var(--gray-100);
+}
+
+.department-item.active,
+.category-item.active,
+.subcategory-item.active,
+.item.active ,
+.bookmark-item.active{
+  background-color: var(--gray-200);
+}
+
+
+::-webkit-scrollbar {
+  width: 6px; /* Decrease width */
+}
+/* Customize the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: var(--gray-600); /* Change color */
+  border-radius: 10px; /* Round edges */
+}
+
+/* Customize the scrollbar track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light background */
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* sidebar styles */
+
+/* Library css file code  */
+.layout {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+
+.bookmarkcategory-list {
+  display: none;
+  overflow-y: auto;
+  max-height: 60vh;
+}
+
+
+/* Active class for visible categories */
+.bookmarkcategory-list.active {
+  display: block;
+}
+.custom-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  content: ""; /* Removes the default '/' separator */
+}
+
+
+/* breadcrumb */
+.bookmark-icon{
+  font-size: 20px;
+}
+.breadcrumb-container{
+  margin : 24px;
+}
+.header-container{
+  margin : 16px 24px;
+}
+
+
+/* Custom Dropdown Menu */
+.custom-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--base-0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  min-width: 150px;
+  padding: 5px 0;
+  z-index: 1000;
+}
+
+.custom-dropdown li {
+  list-style: none;
+  padding: 8px;
+}
+
+.custom-dropdown li a {
+  text-decoration: none;
+  color: var(--gray-700);
+  display: block;
+  font-size: 14px;
+  padding: 8px 15px;
+  white-space: nowrap;
+}
+
+.custom-dropdown li a:hover {
+  background:var(--gray-100);
+  color: var(--gray-600);
+  border-radius: 3px;
+}
+
+/* Show Dropdown on Hover */
+.breadcrumb-item.has-dropdown:hover .custom-dropdown {
+  display: block;
+}
+
+/* Ensure dropdown stays open when hovering */
+.breadcrumb-item.has-dropdown {
+  position: relative;
+}
+
+
+/* custome badge */
+.badge-custom {
+  background-color: transparent !important;
+  border: 2px solid var(--gray-600) !important;
+  color: var(--gray-600) !important;
+}
+ 
+
+/* /////////////////////////////////// */
+/* multiselector */
+.select-wrapper {
+  position: relative;
+}
+.custom-select-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--base-0);
+  border: 1px solid var(--gray-50);
+  border-radius: 0.375rem;
+  margin-top: 2px;
+  max-height: 280px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: none;
+}
+.custom-select-dropdown.show {
+  display: block;
+}
+.select-option {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.select-option:hover {
+  background-color: var(--gray-50);
+}
+.form-check-input {
+  margin-right: 8px;
+}
+.selected-items {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border: 1px solid var(--gray-50);
+  border-radius: 0.375rem;
+  min-height: 3rem;
+}
+.selected-item {
+  display: inline-block;
+  background:var(--gray-50);
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem;
+  border-radius: 0.25rem;
+}
+.selected-item .remove-item {
+  margin-left: 0.5rem;
+  cursor: pointer;
+  color: var(--gray-200);
+}
+
+.select-all-option {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--gray-50);
+  background-color: var(--gray-50);
+}
+.select-button-text {
+  display: inline-block;
+  max-width: calc(100% - 20px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  background-color:var(--gray-100);
+  color:var(--gray-800);
+  padding: 4px 10px;
+  border-radius: 8px;
+  margin: 3px;
+  font-size: 12px;
+}
+
+.remove-chip {
+  margin-left: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
